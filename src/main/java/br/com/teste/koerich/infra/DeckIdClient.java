@@ -9,6 +9,6 @@ import br.com.teste.koerich.model.DeckId;
 public interface DeckIdClient {
 	
 	@GetMapping(value = "/?deck_count=1")
-	DeckId getDeck_Id();
+	DeckId getDeckId();
 
 }
