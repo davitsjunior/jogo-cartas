@@ -6,7 +6,7 @@ import lombok.Data;
 
 @Data
 
-public class CardsPlayer {
+public class CardsPlayer {//Cartas do jogador na rodada
 
 	private String deck_id;
 	private List<Cards> cards;

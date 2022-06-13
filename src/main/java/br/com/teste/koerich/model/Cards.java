@@ -9,8 +9,8 @@ public class Cards {
 	
 	//private String deck_id;
 
-	private String image;
-	private String value;
+	private String image;//caminho das imagens das cartas
+	private String value;//valor da carta atribuída
 	
 		
 	public Cards() {
@@ -23,7 +23,7 @@ public class Cards {
 		this.value = value; 
 	}
 	 
-	public Integer getValue() {
+	public Integer getValue() {//Verifica o valor das cartas e retorna um inteiro
 		switch (value) {
 		case "KING": 
 			return 13;

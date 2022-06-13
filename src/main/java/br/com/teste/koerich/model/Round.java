@@ -7,7 +7,7 @@ import java.util.List;
 import lombok.Data;
 
 @Data
-public class Round {
+public class Round {//Rodada do Jogo
 
 	private List<Player> players = new ArrayList<>();
 	
