@@ -20,12 +20,10 @@ public class RoundController {
 	private RoundService roundService;
 	
 	@GetMapping("/{id}")
-	public ResponseEntity<Round> obterCartas(@PathVariable String id) {
-		
-		
+	public ResponseEntity<Round> obterCartas(@PathVariable String id) throws Exception{
+				
 		Round round = roundService.distCards(id);
 				
-		return new ResponseEntity<Round>(round,HttpStatus.OK);
-				
+		return new ResponseEntity<Round>(round,HttpStatus.OK);				
 	}
 }
