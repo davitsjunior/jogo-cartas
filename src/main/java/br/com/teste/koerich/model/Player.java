@@ -17,7 +17,7 @@ public class Player {
 		for (int i = 0; i < 5; i++) {//Soma os valores das cartas no jogador
 			score = score + cards.getCards().get(i).getValue();			
 		}
-		return score;		
+		return score;		 
 
 	}	
 }

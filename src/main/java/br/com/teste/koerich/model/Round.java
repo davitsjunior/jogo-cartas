@@ -8,8 +8,7 @@ import lombok.Data;
 
 @Data
 public class Round {//Rodada do Jogo
-	
-	
+		
 	enum enumStatus {EMPATE, VITORIA};
 	private List<Player> players = new ArrayList<>();
 	
@@ -17,14 +16,15 @@ public class Round {//Rodada do Jogo
 	
 	public void adicionarJogador (Player player) {
 		players.add(player);		
-	}
-	
+	} 
+	 
 	public List<Player> rank(){
 		players.sort(new Ranking());
 		Collections.reverse(players);
 		if (players.get(0).getScore() == players.get(1).getScore() ) {
 			status = enumStatus.EMPATE;			
-		}
-		return players;
+		}					
+		return players;		
 	}
-}
+} 
+  
