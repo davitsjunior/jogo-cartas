@@ -3,6 +3,7 @@ package br.com.teste.koerich.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,12 +19,14 @@ public class DeckController {
 	private DeckService deckService;
 	
 	@GetMapping
-	public ResponseEntity<DeckId> buscarDeckId() {
+	public ResponseEntity<DeckId> buscarDeckId(Model model) {
 		
 		DeckId deck = deckService.getIdeck();
 		
-		return new ResponseEntity<DeckId>(deck, HttpStatus.OK);
+		model.addAttribute("deck_id", deck.getDeck_id());
 		
-		
-	}
+		return new ResponseEntity<DeckId>(deck, HttpStatus.OK);	 
+	} 
+	
+
 }

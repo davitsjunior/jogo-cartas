@@ -10,14 +10,13 @@ public class Player {
 	private CardsPlayer cards;
 	private Integer score;
 
-	public Integer sunScore() {
+	public Integer sunScore(){
 
 		score = 0;
 
 		for (int i = 0; i < 5; i++) {//Soma os valores das cartas no jogador
 			score = score + cards.getCards().get(i).getValue();			
-		} 				
-
+		}
 		return score;		
 
 	}	
