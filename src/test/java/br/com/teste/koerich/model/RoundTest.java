@@ -28,8 +28,6 @@ public class RoundTest {
 		 
 		testP1.setCards(cardsPlayer);
 
-		testP1.sunScore();
-		 
 		round.adicionarJogador(testP1);
 		round.adicionarJogador(testP1);
 		round.adicionarJogador(testP1);
@@ -38,38 +36,9 @@ public class RoundTest {
 		round.rank(); 
 		
 		Assertions.assertEquals(enumStatus.EMPATE, round.getStatus());
+		Assertions.assertEquals(4, round.getPlayers().size());
 	}
-	
-	@Test
-	void testRank2() {
-
-		Round round = new Round();
-
-		Player testP1 = new Player();
-		List<Cards> listCards = new ArrayList<Cards>();
-		CardsPlayer cardsPlayer = new CardsPlayer();
-
-		for( int i= 0; i < 5; i++ ) {
-			Cards cards = new Cards();
-			cards.setValue("2");
-			listCards.add(cards);
-		}
-		cardsPlayer.setCards(listCards);
-
-		testP1.setCards(cardsPlayer);
-
-		testP1.sunScore();
-
-		round.adicionarJogador(testP1);
-		round.adicionarJogador(testP1);
-		round.adicionarJogador(testP1);
-		round.adicionarJogador(testP1); 
-
-		round.rank();  
-
-		Assertions.assertEquals(enumStatus.VITORIA, round.getStatus());
-	}
-	
+	 
 	@Test
 	void testRank3() {
 
@@ -87,8 +56,6 @@ public class RoundTest {
 		cardsPlayer.setCards(listCards);
 
 		testP1.setCards(cardsPlayer);
-
-		testP1.sunScore();
 
 		round.adicionarJogador(testP1);
 		round.adicionarJogador(testP1);
@@ -108,13 +75,12 @@ public class RoundTest {
 
 		testP2.setCards(cardsPlayer2);
 
-		testP2.sunScore();
-		
 		round.adicionarJogador(testP2); 
 
 		round.rank();  
 
-		Assertions.assertEquals(enumStatus.VITORIA, round.getStatus());		
+		Assertions.assertEquals(enumStatus.VITORIA, round.getStatus());	
+		Assertions.assertEquals(1, round.getPlayers().size());
 	}	
 }
  

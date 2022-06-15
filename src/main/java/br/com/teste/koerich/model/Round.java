@@ -1,6 +1,7 @@
 package br.com.teste.koerich.model;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -18,13 +19,15 @@ public class Round {//Rodada do Jogo
 		players.add(player);		
 	} 
 	 
-	public List<Player> rank(){
+	public void rank(){
 		players.sort(new Ranking());
 		Collections.reverse(players);
 		if (players.get(0).getScore() == players.get(1).getScore() ) {
-			status = enumStatus.EMPATE;			
-		}					
-		return players;		
+			status = enumStatus.EMPATE;	
+			return;
+		}			
+		players = Arrays.asList(players.get(0)); 
+			 
 	}
 } 
   
