@@ -13,7 +13,7 @@ public class RoundService{
 
 	@Autowired
 	private CardsClient cardsClient;
-	
+		
 	public Round distCards(String id) throws Exception {
 		
 		Round round = new Round();
@@ -28,11 +28,11 @@ public class RoundService{
 				Player p1 = new Player();
 				
 				p1.setId(i);
-				p1.setName("Davi" + i);
+				p1.setName("PLAYER " + i);
 				p1.setCards(cardsPlayer);
 				p1.sunScore();
 				
-				round.adicionarJogador(p1);			
+				round.adicionarJogador(p1);	 	 	
 			}
 			round.rank();
 			
@@ -41,6 +41,8 @@ public class RoundService{
 			throw e;
 		}
 		
-		return round;		
+			
+		return round; 
+				
 	}	
 }

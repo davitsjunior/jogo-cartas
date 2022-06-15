@@ -13,7 +13,7 @@ import br.com.teste.koerich.model.Round;
 import br.com.teste.koerich.service.RoundService;
 
 @RestController
-@RequestMapping("/round/")
+@RequestMapping("/round")
 public class RoundController {
 	
 	@Autowired
@@ -24,6 +24,6 @@ public class RoundController {
 				
 		Round round = roundService.distCards(id);
 				
-		return new ResponseEntity<Round>(round,HttpStatus.OK);				
+		return new ResponseEntity<Round>(round,HttpStatus.OK);			  	
 	}
 }
