@@ -7,13 +7,11 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode
 public class Cards {
 	
-	//private String deck_id;
-
 	private String image;//caminho das imagens das cartas
 	private String value;//valor da carta atribuída
 	
 		
-	public Cards() {
+	public Cards() { 
 		
 	}
 
