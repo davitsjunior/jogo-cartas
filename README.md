@@ -10,14 +10,14 @@ somatória. Se houver empate, retornar todos os jogadores na tela.
 
 Endpoints disponibilizados para validação do teste::
 
-* Embaralha as cartas: `GET/deck`
+* Busca o ID do Deck de Cartas: `GET/deck`
 * Executa uma rodada do jogo: `GET/round/{deckId}`
 
 ### API
 
 `GET/deck`
 
-Embaralha as cartas e disponibiliza o id de um deck com 52 cartas
+Busca o ID do Deck para distribuição de cartass
 
 **Body:**
 
@@ -39,7 +39,7 @@ Embaralha as cartas e disponibiliza o id de um deck com 52 cartas
 
 `GET/round/{deckId}`
 
-Executa uma rodada do jogo com 4 jogadores com as cartas do deck
+Executa uma rodada do jogo com 4 jogadores com 5 cartas do deck
 
 **Body:**
 
@@ -83,13 +83,21 @@ Executa uma rodada do jogo com 4 jogadores com as cartas do deck
 **Dados:**
 
 `players` - Lista de jogadores. Pode conter Apenas 1 em caso de vitória ou 4 em caso de empate.
+
 `players[i].id` - Identificador do jogador
+
 `players[i].name` - Nome do jogador
+
 `players[i].cards` - Encapsula as Cartas do jogador + deck
+
 `players[i].cards.deck_id` - Deck qual as cartas pertencem
+
 `players[i].cards.cards` - Cartas do jogador
+
 `players[i].cards.cards[i].image` - Representação da carta(imagem)
+
 `players[i].cards.cards[i].value` - Valor da carta
+
 `status` - Resultado do Jogo(EMPATE OU VITORIA)
 
 **STATUS:**
@@ -104,3 +112,14 @@ Executa uma rodada do jogo com 4 jogadores com as cartas do deck
 * **Feign**
 * **Maven**
 * **JUnit**
+* **Swagger**
+
+
+### Executar
+```bash
+mvn spring-boot:run
+```
+
+### Documentação
+
+[http://localhost:8080/swagger-ui/index.html](http://localhost:8080/swagger-ui/index.html)
